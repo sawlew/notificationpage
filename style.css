@@ -1,23 +1,43 @@
+@font-face {
+font-family: "jakarta";
+src: url("./assets/fonts/PlusJakartaSans-VariableFont_wght.ttf");
+}
+
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    font-size: 14px;
+}
+
+body{
+    font-family: jakarta;
+}
+.attribution {
+    font-size: 11px; text-align: center;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
 }
 
 main{
+    width: 45%;
+}
+@media only screen and (max-width:1200px) {
+    main{
     width: 50%;
-    border: 1px solid red;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 0 auto;
+    }
 }
-
-.top{
-    display: flex;
-    justify-content: space-between;
+@media only screen and (max-width:1024px) {
+    main{
+    width: 60%;
+    }
 }
-
-.notification{
-    display: flex;
-    justify-content: space-between;
+@media only screen and (max-width:768px) {
+    main{
+    width: 80%;
+    }
+}
+@media only screen and (max-width:480px) {
+    main{
+    width: 100%;
+    border: none;
+    }
 }

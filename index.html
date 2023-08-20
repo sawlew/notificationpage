@@ -5,101 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <script src="index.js"></script>
   <title>Frontend Mentor | Notifications page</title>
  
   <script src="https://cdn.tailwindcss.com"></script>
-
+  <link rel="stylesheet" href="style.css">
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    @font-face {
-    font-family: "jakarta";
-    src: url("./assets/fonts/PlusJakartaSans-VariableFont_wght.ttf");
-    }
-    *{
-      font-size: 14px;
-    }
-    body{
-      font-family: jakarta;
-    }
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-    
-    main{
-      width: 45%;
-    }
-    @media only screen and (max-width:1200px) {
-      main{
-        width: 50%;
-      }
-    }
-    @media only screen and (max-width:1024px) {
-      main{
-        width: 60%;
-      }
-    }
-    @media only screen and (max-width:768px) {
-      main{
-        width: 80%;
-      }
-    }
-    @media only screen and (max-width:480px) {
-      main{
-        width: 100%;
-      }
-    }
-  </style>
 </head>
 <body class="">
-  <main class=" border mx-auto rounded-[10px] px-[20px] py-[10px] my-5">
+  <main class="border mx-auto rounded-[10px] px-[20px] py-[10px] my-5">
 
     <div class="flex justify-between my-5">
       <div class="flex">
         <p class="font-bold">Notifications</p>
-        <span class="ml-[10px] border w-[30px] text-center rounded-[5px] bg-blue-900 text-white">3</span>
+        <span id="notify" class="ml-[10px] border w-[30px] text-center rounded-[5px] bg-blue-900 text-white">3</span>
       </div>
-      <p class="text-blue-900 font-medium cursor-pointer">Mark all as read</p>
+      <p class="text-blue-900 font-medium cursor-pointer" onclick="notification()">Mark all as read</p>
     </div>
 
-    <div class="flex items-center bg-blue-50 rounded-[10px]  max-h-fit p-5 my-2">
-      <img src="./assets/images/avatar-mark-webber.webp" alt="" class="w-[40px] mr-[20px]">
+    <div id="line" class="flex items-start bg-blue-50 rounded-[10px]  max-h-fit p-5 my-2">
+      <img src="./assets/images/avatar-mark-webber.webp" alt="" class="w-[40px] h-[40px] mr-[20px]">
       <div>
-        <div class="">
-          <p><span class="font-bold cursor-pointer hover:text-blue-900">Mark Webber </span>
+        <div>
+          <p class="leading-4"><span class="font-bold cursor-pointer hover:text-blue-900">Mark Webber </span>
             &nbsp;<span class="text-neutral-600">reacted to your post </span>
             &nbsp;<span class="font-bold cursor-pointer text-blue-900">My first tournament today!</span>
-            <span class="text-red-600 text-[20px]">&#x2022;</span>
-            &period;
+            <span id="dot1" class="text-red-600 text-[20px]">&#x2022;</span>
           </p>
         </div>
-        <p>1m ago</p>
+        <p class="text-neutral-600">1m ago</p>
       </div>
     </div>
 
-    <div class="flex items-center bg-blue-50 rounded-[10px] max-h-fit p-5 my-2">
+    <div id="line" class="flex items-start bg-blue-50 rounded-[10px] max-h-fit p-5 my-2">
       <img src="./assets/images/avatar-angela-gray.webp" alt="" class="w-[40px] mr-[20px]">
       <div>
-        <div class="">
-          <p><span class="font-bold cursor-pointer hover:text-blue-900">Angela Gray </span>
+        <!-- <div class="border border-red-600 h-full"> -->
+          <p class="leading-4"><span class="font-bold cursor-pointer hover:text-blue-900">Angela Gray </span>
             &nbsp;<span class="text-neutral-600">followed you</span>
-            <span class="text-red-600 text-[20px]">&#x2022;</span>
+            <span id="dot1" class="text-red-600 text-[20px]">&#x2022;</span>
           </p>
-        </div>
-        <p>5m ago</p>
+        <!-- </div> -->
+        <p class="text-neutral-600">5m ago</p>
       </div>
     </div>
 
-    <div class="flex items-center bg-blue-50 rounded-[10px] max-h-fit p-5 my-2">
+    <div id="line" class="flex items-start bg-blue-50 rounded-[10px] max-h-fit p-5 my-2">
       <img src="./assets/images/avatar-jacob-thompson.webp" alt="" class="w-[40px] mr-[20px]">
       <div>
         <div class="">
-          <p><span class="font-bold cursor-pointer hover:text-blue-900">Jacob Thomson </span>
+          <p class="leading-4"><span class="font-bold cursor-pointer hover:text-blue-900">Jacob Thomson </span>
             &nbsp;<span class="text-neutral-600">has joined your group </span>
             &nbsp;<span class="font-bold cursor-pointer text-blue-900">Chess Club</span>
-            <span class="text-red-600 text-[20px]">&#x2022;</span>
+            <span id="dot1" class="text-red-600 text-[20px]">&#x2022;</span>
           </p>
         </div> 
-        <p>1 day ago</p>
+        <p class="text-neutral-600">1 day ago</p>
       </div>
     </div>
 
@@ -107,7 +68,7 @@
       <img src="./assets/images/avatar-rizky-hasanuddin.webp" alt="" class="w-[40px] mr-[20px]">
       <div>
         <p><span class="font-bold cursor-pointer hover:text-blue-900">Rizky Hasanuddin </span>&nbsp;<span class="text-neutral-600">sent you a private message</span></p>
-        <p>5 days ago</p>
+        <p class="text-neutral-600">5 days ago</p>
         <div class="border rounded-[10px] p-2 hover:bg-blue-100 hover:border-blue-50 cursor-pointer">
           <p class="text-neutral-600">
             Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game.
@@ -116,34 +77,30 @@
       </div>
     </div>
 
-    <div class="flex items-center justify-between rounded-[10px] my-2 max-h-fit">
-      <div class="flex items-center p-5">
+    <div class="flex items-start rounded-[10px] my-2 max-h-fit p-5">
         <img src="./assets/images/avatar-kimberly-smith.webp" alt="" class="w-[40px] mr-[20px]">
-        <div>
-          <p><span class="font-bold cursor-pointer hover:text-blue-900">Kimberly Smith </span>&nbsp;<span>commented on your picture </span></p>
-          <p>1 week ago</p>
+        <div class="flex justify-between w-full">
+          <div>
+            <p class="leading-4"><span class="font-bold cursor-pointer hover:text-blue-900">Kimberly Smith </span>&nbsp;<span>commented on your picture </span></p>
+            <p class="text-neutral-600">1 week ago</p>
+          </div>
+          <img src="./assets/images/image-chess.webp" alt="" class="w-[40px] h-[40px] cursor-pointer">
         </div>
-      </div>
-      
-      <div class="border hover:border hover:border-blue-50 p-[1px] rounded-[10px] cursor-pointer">
-        <img src="./assets/images/image-chess.webp" alt="" class="w-[40px]">
-      </div>
-      
     </div>
 
-    <div class="flex items-center rounded-[10px] max-h-fit p-5 my-2">
+    <div class="flex items-start rounded-[10px] max-h-fit p-5 my-2">
       <img src="./assets/images/avatar-nathan-peterson.webp" alt="" class="w-[40px] mr-[20px]">
       <div class="">
         <p><span class="font-bold cursor-pointer hover:text-blue-900">Nathan Peterson </span>&nbsp;<span class="text-neutral-600">reacted to your recent post </span>&nbsp;<span class="font-bold text-neutral-600 cursor-pointer">5 end-game strategies to increase your win rate</span></p>
-        <p>2 weeks ago</p>
+        <p class="text-neutral-600">2 weeks ago</p>
       </div>
     </div>
 
-    <div class="flex items-center rounded-[10px] max-h-fit p-5 my-2">
+    <div class="flex items-start rounded-[10px] max-h-fit p-5 my-2">
       <img src="./assets/images/avatar-anna-kim.webp" alt="" class="w-[40px] mr-[20px]">
       <div class="">
         <p><span class="font-bold cursor-pointer hover:text-blue-900">Anna Kim </span>&nbsp;<span class="text-neutral-600">left the group </span>&nbsp;<span class="font-bold text-neutral-600 cursor-pointer">Chess Club</span></p>
-        <p>2 weeks ago</p>
+        <p class="text-neutral-600">2 weeks ago</p>
       </div>
     </div>
   </main>
@@ -151,7 +108,7 @@
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Soliu Adeosun</a>.
   </div>
 </body>
 </html>
